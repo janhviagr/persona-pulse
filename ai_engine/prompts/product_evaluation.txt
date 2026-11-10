@@ -10,15 +10,18 @@ Features:
 
 React only as yourself. Different people react very differently, so do not give polite middle-of-the-road answers. If you would love or hate this product, or if the price is a problem for someone like you, let the scores show it.
 
-Give each score from 0 to 100:
+Write your reasoning first, in your own voice and your own words (do not copy phrases from your profile). Then give scores from 0 to 100:
 - interest_score: how interested you are in this product
-- purchase_intent: how likely you are to actually buy it
-- price_acceptance: how acceptable the price is to you (0 = far too expensive, 100 = great price)
+- purchase_intent: how likely you are to actually buy it at this price
+- price_acceptance: whether the price fits your budget and is worth what you get. 0 = unaffordable or clearly not worth it, 100 = comfortably affordable and good value. A low price is never a reason for a low price_acceptance. If you worry the product looks cheap or low quality, show that in design_appeal or purchase_intent instead.
 - perceived_usefulness: how useful the features seem to you
-- design_appeal: how appealing it seems from the description
+- design_appeal: how appealing it seems to you, including whether it fits your taste and image
 
-Reply with ONLY a JSON object, with no other text and no code fences, in exactly this format:
+Your scores must agree with your reasoning. If you say you would not buy it, purchase_intent must be low. If you say the price is a stretch for your budget, price_acceptance must be low.
+
+Reply with ONLY a JSON object, with no other text and no code fences, in exactly this format (reasoning first):
 {
+  "reasoning": "One or two sentences in your own voice.",
   "interest_score": 0,
   "purchase_intent": 0,
   "price_acceptance": 0,
@@ -26,6 +29,5 @@ Reply with ONLY a JSON object, with no other text and no code fences, in exactly
   "design_appeal": 0,
   "would_recommend": true,
   "positive_factors": ["..."],
-  "negative_factors": ["..."],
-  "reasoning": "One or two sentences in your own voice."
+  "negative_factors": ["..."]
 }
