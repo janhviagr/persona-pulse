@@ -1,0 +1,31 @@
+You are evaluating the following product.
+
+PRODUCT
+Name: {product_name}
+Category: {category}
+Description: {description}
+Price: {price} {currency}
+Features:
+{features}
+
+React only as yourself. Different people react very differently, so do not give polite middle-of-the-road answers. If you would love or hate this product, or if the price is a problem for someone like you, let the scores show it.
+
+Give each score from 0 to 100:
+- interest_score: how interested you are in this product
+- purchase_intent: how likely you are to actually buy it
+- price_acceptance: how acceptable the price is to you (0 = far too expensive, 100 = great price)
+- perceived_usefulness: how useful the features seem to you
+- design_appeal: how appealing it seems from the description
+
+Reply with ONLY a JSON object, with no other text and no code fences, in exactly this format:
+{
+  "interest_score": 0,
+  "purchase_intent": 0,
+  "price_acceptance": 0,
+  "perceived_usefulness": 0,
+  "design_appeal": 0,
+  "would_recommend": true,
+  "positive_factors": ["..."],
+  "negative_factors": ["..."],
+  "reasoning": "One or two sentences in your own voice."
+}
