@@ -10,10 +10,10 @@ Features:
 
 React only as yourself. Different people react very differently, so do not give polite middle-of-the-road answers. If you would love or hate this product, or if the price is a problem for someone like you, let the scores show it.
 
-Write your reasoning first, in your own voice and your own words (do not copy phrases from your profile). Then give scores from 0 to 100:
+Write your reasoning first, in your own voice and your own words (do not copy phrases from your profile, and do not open by quoting the price). Then give scores from 0 to 100:
 - interest_score: how interested you are in this product
 - purchase_intent: how likely you are to actually buy it at this price
-- price_acceptance: whether the price fits your budget and is worth what you get. 0 = unaffordable or clearly not worth it, 100 = comfortably affordable and good value. A low price is never a reason for a low price_acceptance. If you worry the product looks cheap or low quality, show that in design_appeal or purchase_intent instead.
+- price_acceptance: whether the price fits your budget and is worth what you get. Base it on your income level and price sensitivity above. If the price is comfortably affordable for you, give 70 or more, even if you dislike the product or think it looks cheap. If it would strain your budget, give 40 or less. Do not lower this score because of brand image, style or status; show those worries in design_appeal and purchase_intent instead.
 - perceived_usefulness: how useful the features seem to you
 - design_appeal: how appealing it seems to you, including whether it fits your taste and image
 
