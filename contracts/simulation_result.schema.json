@@ -1,0 +1,93 @@
+{
+  "additionalProperties": true,
+  "description": "Mirrors Person 3's agent response fields. Scores are 0-100.",
+  "properties": {
+    "persona_id": {
+      "title": "Persona Id",
+      "type": "string"
+    },
+    "interest_score": {
+      "maximum": 100,
+      "minimum": 0,
+      "title": "Interest Score",
+      "type": "number"
+    },
+    "purchase_intent": {
+      "maximum": 100,
+      "minimum": 0,
+      "title": "Purchase Intent",
+      "type": "number"
+    },
+    "price_acceptance": {
+      "maximum": 100,
+      "minimum": 0,
+      "title": "Price Acceptance",
+      "type": "number"
+    },
+    "perceived_usefulness": {
+      "maximum": 100,
+      "minimum": 0,
+      "title": "Perceived Usefulness",
+      "type": "number"
+    },
+    "design_appeal": {
+      "maximum": 100,
+      "minimum": 0,
+      "title": "Design Appeal",
+      "type": "number"
+    },
+    "reasoning": {
+      "title": "Reasoning",
+      "type": "string"
+    },
+    "product_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Product Id"
+    },
+    "would_recommend": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Would Recommend"
+    },
+    "positive_factors": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Positive Factors",
+      "type": "array"
+    },
+    "negative_factors": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Negative Factors",
+      "type": "array"
+    }
+  },
+  "required": [
+    "persona_id",
+    "interest_score",
+    "purchase_intent",
+    "price_acceptance",
+    "perceived_usefulness",
+    "design_appeal",
+    "reasoning"
+  ],
+  "title": "AgentResponse",
+  "type": "object"
+}

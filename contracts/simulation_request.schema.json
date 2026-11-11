@@ -1,0 +1,38 @@
+{
+  "properties": {
+    "product_id": {
+      "title": "Product Id",
+      "type": "string"
+    },
+    "persona_count": {
+      "default": 20,
+      "minimum": 1,
+      "title": "Persona Count",
+      "type": "integer"
+    },
+    "audience_config": {
+      "additionalProperties": true,
+      "title": "Audience Config",
+      "type": "object"
+    },
+    "evaluation_categories": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evaluation Categories",
+      "type": "array"
+    },
+    "pricing_scenarios": {
+      "items": {
+        "type": "number"
+      },
+      "title": "Pricing Scenarios",
+      "type": "array"
+    }
+  },
+  "required": [
+    "product_id"
+  ],
+  "title": "SimulationRequest",
+  "type": "object"
+}

@@ -1,0 +1,61 @@
+{
+  "properties": {
+    "name": {
+      "maxLength": 200,
+      "minLength": 1,
+      "title": "Name",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "category": {
+      "title": "Category",
+      "type": "string"
+    },
+    "price": {
+      "minimum": 0,
+      "title": "Price",
+      "type": "number"
+    },
+    "currency": {
+      "default": "INR",
+      "title": "Currency",
+      "type": "string"
+    },
+    "features": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Features",
+      "type": "array"
+    },
+    "target_audience": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Target Audience"
+    },
+    "product_id": {
+      "title": "Product Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "category",
+    "price",
+    "product_id"
+  ],
+  "title": "Product",
+  "type": "object"
+}
