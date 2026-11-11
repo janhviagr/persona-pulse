@@ -1,0 +1,25 @@
+{
+  "product_id": "PROD001",
+  "name": "FitTrack Smartwatch",
+  "description": "Smartwatch with fitness tracking",
+  "category": "Wearable Technology",
+  "price": 4999,
+  "currency": "INR",
+  "features": [
+    "Heart rate monitoring",
+    "Sleep tracking",
+    "Step counter",
+    "Seven-day battery life"
+  ],
+  "target_audience": {
+    "age_groups": [
+      "18-24",
+      "25-34",
+      "35-44"
+    ],
+    "interests": [
+      "fitness",
+      "technology"
+    ]
+  }
+}
