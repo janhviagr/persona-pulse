@@ -11,6 +11,13 @@ class ConsumerAgent:
         self.llm = llm
         self.max_attempts = max_attempts
 
+    def _invalid(self, error: str) -> dict:
+        return {
+            "persona_id": self.persona["persona_id"],
+            "status": "invalid",
+            "error": error[:300],
+        }
+
     async def evaluate_product(self, product: dict) -> dict:
         """Always returns a dict and never raises.
 
@@ -23,17 +30,18 @@ class ConsumerAgent:
         for _ in range(self.max_attempts):
             try:
                 raw = await self.llm.generate(prompt)
+            except Exception as error:
+                # The provider already retried. Retrying here would only burn more quota.
+                return self._invalid(f"LLMError: {type(error).__name__}: {error}")
+
+            try:
                 data = extract_json(raw)
                 # The agent sets these itself, so the model can't get them wrong.
                 data["persona_id"] = self.persona["persona_id"]
                 data["product_id"] = product.get("product_id", "")
                 checked = AgentResponse(**data).model_dump()
                 return {**checked, "status": "ok"}
-            except Exception as error:  # bad JSON, bad scores, or the LLM call failed
+            except Exception as error:  # bad JSON or bad scores: ask again
                 last_error = f"{type(error).__name__}: {error}"
 
-        return {
-            "persona_id": self.persona["persona_id"],
-            "status": "invalid",
-            "error": last_error,
-        }
+        return self._invalid(last_error)
