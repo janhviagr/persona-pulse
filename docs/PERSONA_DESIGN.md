@@ -19,9 +19,21 @@ Owner: Person 3. Code lives in `ai_engine/personas`, `ai_engine/agents`, `ai_eng
 
 `audience_config` keys (all optional): `age_groups` (for example "18-24", "55+"), `interests` (list), `archetypes` (list of archetype names).
 
+## Price scenarios
+
+    from ai_engine.agents import evaluate_price_scenarios
+
+    out = await evaluate_price_scenarios(product, audience_config, count=20, prices=[2999, 4999, 7999])
+    out["personas"]    # the same personas for every price
+    out["scenarios"]   # list of {price, currency, responses, total, failed}, in the order given
+
+The same personas see every price, so differences between prices come only from the price. LLM calls = personas x prices.
+
 ## Response status
 
 Every result has `status`. `"ok"` means all fields passed validation. `"invalid"` means the agent failed after 3 attempts and carries an `error` message instead of scores. Scoring must use `"ok"` results only and report the invalid count as failed personas.
+
+Optional fields: `would_recommend`, `positive_factors` and `negative_factors` are left out of the result when the agent did not provide them. A missing `would_recommend` means "no answer", which is different from `false` ("the persona said no"). Read these fields with `.get()`, for example `result.get("would_recommend")`. `persona_id`, `product_id`, `status` and all scores are always present in an `"ok"` result.
 
 ## How personas are built
 
@@ -45,3 +57,6 @@ Every result has `status`. `"ok"` means all fields passed validation. `"invalid"
 - Product wording changes reactions. Words like "cheap" or "affordable" in a description shift how premium personas respond.
 - The LLM is not deterministic: two runs on the same persona can differ slightly.
 - No calibration against real consumer data has been done yet.
+
+- Segment results depend on the archetype mix. High income appears only with the Premium archetype, so "High income" segments mostly reflect premium taste. Small segments (under about 15 personas) are noisy.
+- On a free Gemini key the provider is limited to about 12 requests per minute (`GEMINI_REQUESTS_PER_MINUTE`). Rough run times: 20 personas about 2 minutes, 50 about 4 to 5 minutes, 100 about 8 to 9 minutes. Price scenarios multiply this by the number of prices.

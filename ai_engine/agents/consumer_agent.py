@@ -39,7 +39,7 @@ class ConsumerAgent:
                 # The agent sets these itself, so the model can't get them wrong.
                 data["persona_id"] = self.persona["persona_id"]
                 data["product_id"] = product.get("product_id", "")
-                checked = AgentResponse(**data).model_dump()
+                checked = AgentResponse(**data).model_dump(exclude_unset=True)
                 return {**checked, "status": "ok"}
             except Exception as error:  # bad JSON or bad scores: ask again
                 last_error = f"{type(error).__name__}: {error}"
