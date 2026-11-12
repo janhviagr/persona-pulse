@@ -1035,10 +1035,10 @@ The first working version of the platform should support the following:
 
 | Member | Responsibility |
 |---|---|
-| Person 1 | Frontend & UI/UX |
-| Person 2 | Backend, Database & Integration |
-| Person 3 | AI Persona Generation & Multi-Agent Engine |
-| Person 4 | Simulation Orchestration & Analytics |
+| Mahalakshmi B | Frontend & UI/UX |
+| Ashrith Puppala | Backend, Database & Integration |
+| Janhvi | AI Persona Generation & Multi-Agent Engine |
+| Chinmay J Rao | Simulation Orchestration & Analytics |
 
 ---
 
