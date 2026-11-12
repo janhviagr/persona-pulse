@@ -1037,7 +1037,7 @@ The first working version of the platform should support the following:
 |---|---|
 | Mahalakshmi B | Frontend & UI/UX |
 | Ashrith Puppala | Backend, Database & Integration |
-| Janhvi | AI Persona Generation & Multi-Agent Engine |
+| Janhvi Agrawal | AI Persona Generation & Multi-Agent Engine |
 | Chinmay J Rao | Simulation Orchestration & Analytics |
 
 ---
