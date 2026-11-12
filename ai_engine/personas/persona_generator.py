@@ -54,12 +54,46 @@ def parse_age_group(group: str) -> tuple[int, int]:
     return int(low), int(high)
 
 
+OCCUPATION_INCOMES = {
+    "Student": ["Low"],
+    "Intern": ["Low"],
+    "Freelancer": ["Low", "Medium", "High"],
+    "Junior Executive": ["Low", "Medium"],
+    "Software Engineer": ["Medium", "High"],
+    "Teacher": ["Low", "Medium"],
+    "Marketing Executive": ["Medium", "High"],
+    "Nurse": ["Low", "Medium"],
+    "Shopkeeper": ["Low", "Medium"],
+    "Designer": ["Low", "Medium", "High"],
+    "Manager": ["Medium", "High"],
+    "Doctor": ["High"],
+    "Accountant": ["Medium", "High"],
+    "Business Owner": ["Medium", "High"],
+    "Engineer": ["Medium", "High"],
+    "Homemaker": ["Low", "Medium"],
+    "Senior Manager": ["High"],
+    "Government Employee": ["Low", "Medium"],
+    "Retired": ["Low", "Medium", "High"],
+    "Consultant": ["Medium", "High"],
+}
+INCOME_WEIGHTS = {"Low": 0.25, "Medium": 0.5, "High": 0.25}
+
+
+def _pick_occupation(group: str, forced_occupation, forced_income, rng: random.Random) -> str:
+    """Pick a job that fits the age group (and the income, if one is forced)."""
+    if forced_occupation:
+        return forced_occupation
+    pool = OCCUPATIONS.get(group, OCCUPATIONS["25-34"])
+    if forced_income:
+        fitting = [o for o in pool if forced_income in OCCUPATION_INCOMES.get(o, ["Low", "Medium", "High"])]
+        pool = fitting or pool
+    return rng.choice(pool)
+
+
 def _pick_income(occupation: str, rng: random.Random) -> str:
-    if occupation in ("Student", "Intern"):
-        return "Low"
-    if occupation == "Retired":
-        return rng.choices(["Low", "Medium"], weights=[0.5, 0.5])[0]
-    return rng.choices(["Low", "Medium", "High"], weights=[0.25, 0.5, 0.25])[0]
+    """Pick an income level that is believable for this job."""
+    options = OCCUPATION_INCOMES.get(occupation, ["Low", "Medium", "High"])
+    return rng.choices(options, weights=[INCOME_WEIGHTS[o] for o in options])[0]
 
 
 def _pick_archetypes(group: str, allowed: list[str] | None, rng: random.Random) -> list[str]:
@@ -126,10 +160,10 @@ def generate_personas(
         names = _pick_archetypes(group, allowed_archetypes, rng)
         arch = combine_archetypes(names) if names else None
 
-        occupation = (arch and arch["occupation"]) or rng.choice(
-            OCCUPATIONS.get(group, OCCUPATIONS["25-34"])
-        )
-        income = (arch and arch["income"]) or _pick_income(occupation, rng)
+        forced_occupation = arch["occupation"] if arch else None
+        forced_income = arch["income"] if arch else None
+        occupation = _pick_occupation(group, forced_occupation, forced_income, rng)
+        income = forced_income or _pick_income(occupation, rng)
 
         price_range = PRICE_SENSITIVITY[income]
         tech_range = TECH_LITERACY.get(group, (0.3, 0.8))

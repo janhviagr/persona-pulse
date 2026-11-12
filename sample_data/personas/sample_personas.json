@@ -1,0 +1,538 @@
+[
+  {
+    "persona_id": "P001",
+    "age": 20,
+    "occupation": "Student",
+    "interests": [
+      "technology",
+      "gaming",
+      "music"
+    ],
+    "personality_traits": [
+      "price_conscious",
+      "curious",
+      "skeptical"
+    ],
+    "price_sensitivity": 0.83,
+    "technical_literacy": 0.64,
+    "name": "Riya",
+    "income_level": "Low",
+    "location_type": "Rural",
+    "brand_loyalty": 0.35,
+    "innovation_preference": 0.66,
+    "purchase_impulsiveness": 0.54,
+    "primary_motivation": "Value for money",
+    "purchase_constraints": [
+      "Limited budget"
+    ]
+  },
+  {
+    "persona_id": "P002",
+    "age": 42,
+    "occupation": "Accountant",
+    "interests": [
+      "fitness",
+      "travel",
+      "gaming"
+    ],
+    "personality_traits": [
+      "cautious",
+      "practical",
+      "careful"
+    ],
+    "price_sensitivity": 0.47,
+    "technical_literacy": 0.48,
+    "name": "Neha",
+    "income_level": "High",
+    "location_type": "Rural",
+    "brand_loyalty": 0.57,
+    "innovation_preference": 0.58,
+    "purchase_impulsiveness": 0.36,
+    "primary_motivation": "Safety and reliability for the family and Better health and wellbeing",
+    "purchase_constraints": [
+      "Household budget",
+      "Wants proven accuracy"
+    ]
+  },
+  {
+    "persona_id": "P003",
+    "age": 39,
+    "occupation": "Accountant",
+    "interests": [
+      "technology",
+      "gaming",
+      "travel"
+    ],
+    "personality_traits": [
+      "curious",
+      "adventurous",
+      "brand_loyal"
+    ],
+    "price_sensitivity": 0.48,
+    "technical_literacy": 0.84,
+    "name": "Pooja",
+    "income_level": "Medium",
+    "location_type": "Urban",
+    "brand_loyalty": 0.44,
+    "innovation_preference": 0.87,
+    "purchase_impulsiveness": 0.77,
+    "primary_motivation": "Latest features and performance",
+    "purchase_constraints": []
+  },
+  {
+    "persona_id": "P004",
+    "age": 31,
+    "occupation": "Nurse",
+    "interests": [
+      "fitness",
+      "cooking",
+      "finance"
+    ],
+    "personality_traits": [
+      "practical",
+      "careful",
+      "skeptical"
+    ],
+    "price_sensitivity": 0.62,
+    "technical_literacy": 0.6,
+    "name": "Arjun",
+    "income_level": "Medium",
+    "location_type": "Urban",
+    "brand_loyalty": 0.36,
+    "innovation_preference": 0.71,
+    "purchase_impulsiveness": 0.45,
+    "primary_motivation": "Better health and wellbeing",
+    "purchase_constraints": [
+      "Wants proven accuracy"
+    ]
+  },
+  {
+    "persona_id": "P005",
+    "age": 23,
+    "occupation": "Junior Executive",
+    "interests": [
+      "technology",
+      "cooking",
+      "finance"
+    ],
+    "personality_traits": [
+      "practical",
+      "careful",
+      "cautious"
+    ],
+    "price_sensitivity": 0.65,
+    "technical_literacy": 0.63,
+    "name": "Ishita",
+    "income_level": "Medium",
+    "location_type": "Semi-urban",
+    "brand_loyalty": 0.38,
+    "innovation_preference": 0.69,
+    "purchase_impulsiveness": 0.2,
+    "primary_motivation": "Better health and wellbeing",
+    "purchase_constraints": [
+      "Wants proven accuracy"
+    ]
+  },
+  {
+    "persona_id": "P006",
+    "age": 23,
+    "occupation": "Intern",
+    "interests": [
+      "technology",
+      "cooking",
+      "finance"
+    ],
+    "personality_traits": [
+      "practical",
+      "careful",
+      "cautious"
+    ],
+    "price_sensitivity": 0.76,
+    "technical_literacy": 0.7,
+    "name": "Karan",
+    "income_level": "Low",
+    "location_type": "Semi-urban",
+    "brand_loyalty": 0.66,
+    "innovation_preference": 0.69,
+    "purchase_impulsiveness": 0.29,
+    "primary_motivation": "Better health and wellbeing",
+    "purchase_constraints": [
+      "Wants proven accuracy"
+    ]
+  },
+  {
+    "persona_id": "P007",
+    "age": 21,
+    "occupation": "Student",
+    "interests": [
+      "fitness",
+      "music",
+      "sports"
+    ],
+    "personality_traits": [
+      "trend_aware",
+      "impulsive",
+      "brand_loyal"
+    ],
+    "price_sensitivity": 0.49,
+    "technical_literacy": 0.85,
+    "name": "Shreya",
+    "income_level": "Low",
+    "location_type": "Rural",
+    "brand_loyalty": 0.46,
+    "innovation_preference": 0.76,
+    "purchase_impulsiveness": 0.6,
+    "primary_motivation": "Style and social image",
+    "purchase_constraints": [
+      "Wants peer approval"
+    ]
+  },
+  {
+    "persona_id": "P008",
+    "age": 21,
+    "occupation": "Student",
+    "interests": [
+      "fitness",
+      "technology",
+      "finance"
+    ],
+    "personality_traits": [
+      "price_conscious",
+      "curious",
+      "practical"
+    ],
+    "price_sensitivity": 0.85,
+    "technical_literacy": 0.84,
+    "name": "Karan",
+    "income_level": "Low",
+    "location_type": "Urban",
+    "brand_loyalty": 0.15,
+    "innovation_preference": 0.61,
+    "purchase_impulsiveness": 0.47,
+    "primary_motivation": "Value for money",
+    "purchase_constraints": [
+      "Limited budget"
+    ]
+  },
+  {
+    "persona_id": "P009",
+    "age": 27,
+    "occupation": "Software Engineer",
+    "interests": [
+      "fitness",
+      "travel",
+      "fashion"
+    ],
+    "personality_traits": [
+      "practical",
+      "careful",
+      "brand_loyal",
+      "trend_aware"
+    ],
+    "price_sensitivity": 0.48,
+    "technical_literacy": 0.8,
+    "name": "Riya",
+    "income_level": "High",
+    "location_type": "Semi-urban",
+    "brand_loyalty": 0.82,
+    "innovation_preference": 0.51,
+    "purchase_impulsiveness": 0.39,
+    "primary_motivation": "Better health and wellbeing and Quality and brand prestige",
+    "purchase_constraints": [
+      "Wants proven accuracy",
+      "Dislikes cheap-looking products"
+    ]
+  },
+  {
+    "persona_id": "P010",
+    "age": 22,
+    "occupation": "Student",
+    "interests": [
+      "technology",
+      "gaming",
+      "fitness"
+    ],
+    "personality_traits": [
+      "curious",
+      "adventurous",
+      "skeptical"
+    ],
+    "price_sensitivity": 0.59,
+    "technical_literacy": 0.8,
+    "name": "Rohan",
+    "income_level": "Low",
+    "location_type": "Urban",
+    "brand_loyalty": 0.32,
+    "innovation_preference": 0.83,
+    "purchase_impulsiveness": 0.45,
+    "primary_motivation": "Latest features and performance",
+    "purchase_constraints": []
+  },
+  {
+    "persona_id": "P011",
+    "age": 34,
+    "occupation": "Teacher",
+    "interests": [
+      "technology",
+      "cooking",
+      "movies"
+    ],
+    "personality_traits": [
+      "practical",
+      "careful",
+      "impulsive"
+    ],
+    "price_sensitivity": 0.6,
+    "technical_literacy": 0.43,
+    "name": "Karan",
+    "income_level": "Medium",
+    "location_type": "Rural",
+    "brand_loyalty": 0.46,
+    "innovation_preference": 0.47,
+    "purchase_impulsiveness": 0.48,
+    "primary_motivation": "Better health and wellbeing",
+    "purchase_constraints": [
+      "Wants proven accuracy"
+    ]
+  },
+  {
+    "persona_id": "P012",
+    "age": 23,
+    "occupation": "Student",
+    "interests": [
+      "technology",
+      "gaming",
+      "fashion"
+    ],
+    "personality_traits": [
+      "price_conscious",
+      "curious",
+      "trend_aware"
+    ],
+    "price_sensitivity": 0.89,
+    "technical_literacy": 0.79,
+    "name": "Manish",
+    "income_level": "Low",
+    "location_type": "Urban",
+    "brand_loyalty": 0.39,
+    "innovation_preference": 0.56,
+    "purchase_impulsiveness": 0.55,
+    "primary_motivation": "Value for money",
+    "purchase_constraints": [
+      "Limited budget"
+    ]
+  },
+  {
+    "persona_id": "P013",
+    "age": 29,
+    "occupation": "Software Engineer",
+    "interests": [
+      "fitness",
+      "music",
+      "sports"
+    ],
+    "personality_traits": [
+      "trend_aware",
+      "impulsive",
+      "cautious"
+    ],
+    "price_sensitivity": 0.72,
+    "technical_literacy": 0.85,
+    "name": "Meera",
+    "income_level": "Medium",
+    "location_type": "Semi-urban",
+    "brand_loyalty": 0.42,
+    "innovation_preference": 0.66,
+    "purchase_impulsiveness": 0.78,
+    "primary_motivation": "Style and social image",
+    "purchase_constraints": [
+      "Wants peer approval"
+    ]
+  },
+  {
+    "persona_id": "P014",
+    "age": 26,
+    "occupation": "Marketing Executive",
+    "interests": [
+      "fitness",
+      "cooking",
+      "sports"
+    ],
+    "personality_traits": [
+      "practical",
+      "careful",
+      "brand_loyal"
+    ],
+    "price_sensitivity": 0.38,
+    "technical_literacy": 0.77,
+    "name": "Karan",
+    "income_level": "High",
+    "location_type": "Urban",
+    "brand_loyalty": 0.64,
+    "innovation_preference": 0.63,
+    "purchase_impulsiveness": 0.49,
+    "primary_motivation": "Better health and wellbeing",
+    "purchase_constraints": [
+      "Wants proven accuracy"
+    ]
+  },
+  {
+    "persona_id": "P015",
+    "age": 27,
+    "occupation": "Shopkeeper",
+    "interests": [
+      "technology",
+      "cooking",
+      "movies"
+    ],
+    "personality_traits": [
+      "cautious",
+      "practical",
+      "careful"
+    ],
+    "price_sensitivity": 0.64,
+    "technical_literacy": 0.68,
+    "name": "Karan",
+    "income_level": "Medium",
+    "location_type": "Urban",
+    "brand_loyalty": 0.55,
+    "innovation_preference": 0.42,
+    "purchase_impulsiveness": 0.13,
+    "primary_motivation": "Safety and reliability for the family",
+    "purchase_constraints": [
+      "Household budget"
+    ]
+  },
+  {
+    "persona_id": "P016",
+    "age": 27,
+    "occupation": "Marketing Executive",
+    "interests": [
+      "technology",
+      "gaming",
+      "movies"
+    ],
+    "personality_traits": [
+      "curious",
+      "adventurous",
+      "price_conscious"
+    ],
+    "price_sensitivity": 0.27,
+    "technical_literacy": 0.75,
+    "name": "Meera",
+    "income_level": "High",
+    "location_type": "Urban",
+    "brand_loyalty": 0.3,
+    "innovation_preference": 0.77,
+    "purchase_impulsiveness": 0.56,
+    "primary_motivation": "Latest features and performance",
+    "purchase_constraints": []
+  },
+  {
+    "persona_id": "P017",
+    "age": 31,
+    "occupation": "Software Engineer",
+    "interests": [
+      "technology",
+      "cooking",
+      "movies"
+    ],
+    "personality_traits": [
+      "curious",
+      "adventurous",
+      "cautious",
+      "practical"
+    ],
+    "price_sensitivity": 0.59,
+    "technical_literacy": 0.79,
+    "name": "Ananya",
+    "income_level": "Medium",
+    "location_type": "Semi-urban",
+    "brand_loyalty": 0.36,
+    "innovation_preference": 0.57,
+    "purchase_impulsiveness": 0.46,
+    "primary_motivation": "Latest features and performance and Safety and reliability for the family",
+    "purchase_constraints": [
+      "Household budget"
+    ]
+  },
+  {
+    "persona_id": "P018",
+    "age": 42,
+    "occupation": "Manager",
+    "interests": [
+      "technology",
+      "cooking",
+      "photography"
+    ],
+    "personality_traits": [
+      "practical",
+      "careful",
+      "curious"
+    ],
+    "price_sensitivity": 0.5,
+    "technical_literacy": 0.56,
+    "name": "Nikhil",
+    "income_level": "High",
+    "location_type": "Semi-urban",
+    "brand_loyalty": 0.31,
+    "innovation_preference": 0.64,
+    "purchase_impulsiveness": 0.29,
+    "primary_motivation": "Better health and wellbeing",
+    "purchase_constraints": [
+      "Wants proven accuracy"
+    ]
+  },
+  {
+    "persona_id": "P019",
+    "age": 20,
+    "occupation": "Student",
+    "interests": [
+      "fitness",
+      "cooking",
+      "travel"
+    ],
+    "personality_traits": [
+      "practical",
+      "careful",
+      "skeptical"
+    ],
+    "price_sensitivity": 0.52,
+    "technical_literacy": 0.51,
+    "name": "Rahul",
+    "income_level": "Low",
+    "location_type": "Urban",
+    "brand_loyalty": 0.44,
+    "innovation_preference": 0.63,
+    "purchase_impulsiveness": 0.4,
+    "primary_motivation": "Better health and wellbeing",
+    "purchase_constraints": [
+      "Wants proven accuracy"
+    ]
+  },
+  {
+    "persona_id": "P020",
+    "age": 21,
+    "occupation": "Intern",
+    "interests": [
+      "fitness",
+      "technology",
+      "finance"
+    ],
+    "personality_traits": [
+      "curious",
+      "adventurous",
+      "skeptical"
+    ],
+    "price_sensitivity": 0.65,
+    "technical_literacy": 0.98,
+    "name": "Pooja",
+    "income_level": "Low",
+    "location_type": "Urban",
+    "brand_loyalty": 0.47,
+    "innovation_preference": 0.85,
+    "purchase_impulsiveness": 0.5,
+    "primary_motivation": "Latest features and performance",
+    "purchase_constraints": []
+  }
+]
