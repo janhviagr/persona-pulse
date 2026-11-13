@@ -24,7 +24,7 @@ async def fake_eval(product, audience_config, count, on_progress=None):
     if on_progress:
         for i in range(1, count + 1):
             on_progress(i, 0, count)
-    return {"personas": personas, "responses": responses, "total": count, "failed": 0}
+    return {"personas": personas, "responses": responses, "total": len(responses), "failed": 0}
 
 
 def test_full_flow(monkeypatch):

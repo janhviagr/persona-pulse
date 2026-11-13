@@ -103,29 +103,38 @@ async def run_simulation_job(
 
         personas = [_to_dict(p) for p in _get(out, "personas")]
         total = int(_get(out, "total"))
-        failed = int(_get(out, "failed"))
 
         valid_personas = []
         for p in personas:
+            if isinstance(p.get("personality_traits"), dict):
+                p["personality_traits"] = list(p["personality_traits"])
             try:
-                valid_personas.append(PersonaProfile.model_validate(p).model_dump(mode="json"))
+                valid_personas.append(PersonaProfile.model_validate(p).model_dump(mode="json", exclude_none=True))
             except ValidationError:
-                valid_personas.append(p)  # keep as-is; analytics tolerates missing fields poorly, so log
+                valid_personas.append(p)
                 log.warning("persona %s failed schema validation", p.get("persona_id"))
         known_ids = {p["persona_id"] for p in valid_personas}
 
         valid: list[dict[str, Any]] = []
         for r in _get(out, "responses"):
+            d = _to_dict(r)
+            if d.get("status", "ok") != "ok":
+                continue
             try:
-                resp = AgentResponse.model_validate(_to_dict(r))
+                resp = AgentResponse.model_validate(d)
             except ValidationError:
-                failed += 1
                 continue
             if resp.persona_id not in known_ids:
-                failed += 1
                 continue
-            valid.append(resp.model_dump(mode="json"))
+            normalized = resp.model_dump(mode="json")
+            normalized["status"] = "ok"
+            # The agent schema permits an empty product_id for standalone
+            # usage; the backend already knows which submitted product ran.
+            if not normalized.get("product_id"):
+                normalized["product_id"] = product.get("product_id", "")
+            valid.append(normalized)
 
+        failed = total - len(valid)  # one source of truth: everything not valid
         if not valid:
             raise RuntimeError("No valid agent responses were produced")
 
