@@ -677,10 +677,10 @@ main
 
 | Member | Branch |
 |---|---|
-| Person 1 | `feature/frontend` |
-| Person 2 | `feature/backend` |
-| Person 3 | `feature/persona-engine` |
-| Person 4 | `feature/analytics` |
+| Mahalakshmi B | `feature/frontend` |
+| Ashrith Puppala| `feature/backend` |
+| Janhvi Agrawal | `feature/persona-engine` |
+| Chinmay J Rao | `feature/analytics` |
 
 ### Development Rules
 
@@ -760,10 +760,10 @@ The initial development plan targets a 12-day implementation cycle.
 
 ### Phase 2 — Independent Development
 
-- Person 1: Develop frontend.
-- Person 2: Develop backend and database.
-- Person 3: Develop persona and agent engine.
-- Person 4: Develop simulation and analytics using mock responses.
+- Mahalakshmi B: Develop frontend.
+- Ashrith Puppala: Develop backend and database.
+- Janhvi Agrawal: Develop persona and agent engine.
+- Chinmay J Rao: Develop simulation and analytics using mock responses.
 
 ### Phase 3 — Integration
 
@@ -929,10 +929,10 @@ Each module must be tested independently before integration.
 
 | Member | Testing Requirements |
 |---|---|
-| Person 1 | Component rendering, form validation, API integration |
-| Person 2 | API endpoints, database operations, simulation lifecycle |
-| Person 3 | Persona generation, profile validation, agent responses |
-| Person 4 | Parallel execution, scoring, segmentation, report generation |
+| Mahalakshmi B | Component rendering, form validation, API integration |
+| Ashrith Puppala | API endpoints, database operations, simulation lifecycle |
+| Janhvi Agrawal| Persona generation, profile validation, agent responses |
+| Chinmay J Rao | Parallel execution, scoring, segmentation, report generation |
 
 ### End-to-End Acceptance Test
 
@@ -944,7 +944,7 @@ Each module must be tested independently before integration.
 - Age groups: 18–24, 25–34, 35–44
 - Interests: Fitness and technology
 
-**Simulation Size:** 50 synthetic personas
+**Simulation Size:** 10 synthetic personas
 
 Expected workflow:
 
