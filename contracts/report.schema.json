@@ -1,0 +1,61 @@
+{
+  "additionalProperties": true,
+  "properties": {
+    "simulation_id": {
+      "title": "Simulation Id",
+      "type": "string"
+    },
+    "overall_score": {
+      "title": "Overall Score",
+      "type": "number"
+    },
+    "metrics": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Metrics",
+      "type": "object"
+    },
+    "segment_analysis": {
+      "additionalProperties": true,
+      "title": "Segment Analysis",
+      "type": "object"
+    },
+    "pricing_analysis": {
+      "additionalProperties": true,
+      "title": "Pricing Analysis",
+      "type": "object"
+    },
+    "sentiment_distribution": {
+      "additionalProperties": true,
+      "title": "Sentiment Distribution",
+      "type": "object"
+    },
+    "recommendations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Recommendations",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "simulation_id",
+    "overall_score",
+    "metrics",
+    "segment_analysis",
+    "pricing_analysis",
+    "sentiment_distribution",
+    "recommendations",
+    "limitations"
+  ],
+  "title": "Report",
+  "type": "object"
+}

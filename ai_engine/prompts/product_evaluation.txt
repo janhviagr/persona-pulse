@@ -1,0 +1,33 @@
+You are evaluating the following product.
+
+PRODUCT
+Name: {product_name}
+Category: {category}
+Description: {description}
+Price: {price} {currency}
+Features:
+{features}
+
+React only as yourself. Different people react very differently, so do not give polite middle-of-the-road answers. If you would love or hate this product, or if the price is a problem for someone like you, let the scores show it.
+
+Write your reasoning first, in your own voice and your own words (do not copy phrases from your profile, and do not open by quoting the price). Then give scores from 0 to 100:
+- interest_score: how interested you are in this product
+- purchase_intent: how likely you are to actually buy it at this price
+- price_acceptance: whether the price fits your budget and is worth what you get. Base it on your income level and price sensitivity above. If the price is comfortably affordable for you, give 70 or more, even if you dislike the product or think it looks cheap. If it would strain your budget, give 40 or less. Do not lower this score because of brand image, style or status; show those worries in design_appeal and purchase_intent instead.
+- perceived_usefulness: how useful the features seem to you
+- design_appeal: how appealing it seems to you, including whether it fits your taste and image
+
+Your scores must agree with your reasoning. If you say you would not buy it, purchase_intent must be low. If you say the price is a stretch for your budget, price_acceptance must be low.
+
+Reply with ONLY a JSON object, with no other text and no code fences, in exactly this format (reasoning first):
+{
+  "reasoning": "One or two sentences in your own voice.",
+  "interest_score": 0,
+  "purchase_intent": 0,
+  "price_acceptance": 0,
+  "perceived_usefulness": 0,
+  "design_appeal": 0,
+  "would_recommend": true,
+  "positive_factors": ["..."],
+  "negative_factors": ["..."]
+}

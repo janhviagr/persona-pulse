@@ -1,0 +1,152 @@
+{
+  "additionalProperties": true,
+  "properties": {
+    "persona_id": {
+      "title": "Persona Id",
+      "type": "string"
+    },
+    "age": {
+      "maximum": 120,
+      "minimum": 0,
+      "title": "Age",
+      "type": "integer"
+    },
+    "occupation": {
+      "title": "Occupation",
+      "type": "string"
+    },
+    "interests": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Interests",
+      "type": "array"
+    },
+    "personality_traits": {
+      "title": "Personality Traits"
+    },
+    "price_sensitivity": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Price Sensitivity",
+      "type": "number"
+    },
+    "technical_literacy": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Technical Literacy",
+      "type": "number"
+    },
+    "name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Name"
+    },
+    "income_level": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Income Level"
+    },
+    "location_type": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Location Type"
+    },
+    "brand_loyalty": {
+      "anyOf": [
+        {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Brand Loyalty"
+    },
+    "innovation_preference": {
+      "anyOf": [
+        {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Innovation Preference"
+    },
+    "purchase_impulsiveness": {
+      "anyOf": [
+        {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Purchase Impulsiveness"
+    },
+    "primary_motivation": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Primary Motivation"
+    },
+    "purchase_constraints": {
+      "anyOf": [
+        {},
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Purchase Constraints"
+    }
+  },
+  "required": [
+    "persona_id",
+    "age",
+    "occupation",
+    "interests",
+    "personality_traits",
+    "price_sensitivity",
+    "technical_literacy"
+  ],
+  "title": "PersonaProfile",
+  "type": "object"
+}
