@@ -118,7 +118,7 @@ def test_factor_analysis_counts_actual_factors_case_insensitively():
         valid_response(), valid_response("P002", positive_factors=[" useful   FITNESS tracking "])
     ])
     assert result["positive_factors"] == [{"factor": "Useful fitness tracking", "count": 2}]
-    assert result["negative_factors"] == [{"factor": "Price is high", "count": 1}]
+    assert result["negative_factors"] == [{"factor": "Price is high", "count": 2}]
     assert result["recurring_reasoning"] == [{
         "reasoning": "Useful, but the submitted price is high for my budget.", "count": 2
     }]

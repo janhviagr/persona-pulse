@@ -102,7 +102,19 @@ def _score(response: Mapping[str, Any]) -> float:
 
 def calculate_scores(responses: Sequence[Any]) -> dict[str, float]:
     """Calculate the specified composite and component means from valid rows."""
-    valid, _ = validate_responses(responses)
+    # A caller may pass rows already validated by ``generate_report``. Accept
+    # those normalized model dumps while retaining strict schema/product checks.
+    prepared = []
+    for item in responses:
+        try:
+            raw = _as_dict(item)
+        except TypeError:
+            prepared.append(item)
+            continue
+        if "status" not in raw:
+            raw["status"] = "ok"
+        prepared.append(raw)
+    valid, _ = validate_responses(prepared)
     metrics = {
         "overall_score": _average([_score(response) for response in valid]),
         "interest_score": _average([response["interest_score"] for response in valid]),
@@ -219,12 +231,16 @@ def analyze_pricing(
 def _factor_counts(responses: Sequence[Mapping[str, Any]], field: str) -> list[dict[str, Any]]:
     labels: dict[str, str] = {}
     counts: Counter[str] = Counter()
+    seen_by_persona: set[tuple[str, str]] = set()
     for response in responses:
         for factor in response.get(field) or []:
             normalized = " ".join(factor.split()).casefold()
-            if normalized:
+            persona_id = str(response.get("persona_id", ""))
+            key = (persona_id, normalized)
+            if normalized and key not in seen_by_persona:
                 counts[normalized] += 1
                 labels.setdefault(normalized, " ".join(factor.split()))
+                seen_by_persona.add(key)
     return [
         {"factor": labels[key], "count": count}
         for key, count in sorted(counts.items(), key=lambda item: (-item[1], item[0]))
@@ -312,7 +328,12 @@ def generate_report(
     normalized_personas: list[dict[str, Any]] = []
     for item in personas:
         try:
-            normalized_personas.append(Persona.model_validate(_as_dict(item)).model_dump(mode="python"))
+            persona_data = _as_dict(item)
+            # Accept the earlier backend contract's trait-score mapping while
+            # the current Person 3 contract uses a list of trait names.
+            if isinstance(persona_data.get("personality_traits"), Mapping):
+                persona_data["personality_traits"] = list(persona_data["personality_traits"])
+            normalized_personas.append(Persona.model_validate(persona_data).model_dump(mode="python"))
         except (ValidationError, TypeError, ValueError):
             continue
     known_ids = {persona["persona_id"] for persona in normalized_personas}

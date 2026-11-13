@@ -1,6 +1,7 @@
 """Analytics for validated persona evaluation responses."""
 
 from .analytics import (
+    WEIGHTS,
     analyze_factors,
     analyze_pricing,
     analyze_segments,
@@ -11,6 +12,7 @@ from .analytics import (
 )
 
 __all__ = [
+    "WEIGHTS",
     "analyze_factors",
     "analyze_pricing",
     "analyze_segments",

@@ -63,9 +63,9 @@ class Report(BaseModel):
 
     simulation_id: str
     overall_score: float
-    metrics: dict[str, float]
     segment_analysis: dict[str, Any]
     pricing_analysis: dict[str, Any]
     sentiment_distribution: dict[str, Any]
-    recommendations: list[str]
-    limitations: list[str]
+    metrics: dict[str, Any]
+    recommendations: list[Any]
+    limitations: list[Any]

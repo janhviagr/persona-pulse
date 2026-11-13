@@ -9,6 +9,17 @@
 
 ## 1. Overview
 
+## Run the Streamlit application (Windows)
+
+From the repository root, install the project dependencies and start the app:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r backend\requirements.txt
+.\.venv\Scripts\python.exe -m streamlit run frontend\app.py
+```
+
+Add `GEMINI_API_KEY` to the root `.env` file to run AI evaluations. Persona generation works without a key; evaluation uses the configured Gemini provider. Use a small persona count first because each persona requires an LLM request. The results are synthetic and are not validated market research.
+
 Synthetic User Persona Swarm is an AI-powered product testing and market validation platform that simulates how different consumer segments might perceive, evaluate, and respond to a product.
 
 Traditional market research, surveys, and user testing can be expensive, time-consuming, and limited by the number and diversity of participants. Products are often launched without adequately understanding the preferences, expectations, and purchasing behaviours of different target audiences.
