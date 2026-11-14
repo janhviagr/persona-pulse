@@ -1033,12 +1033,12 @@ The first working version of the platform should support the following:
 
 ## 19. Contributors
 
-| Member | Responsibility |
-|---|---|
-| Mahalakshmi B | Frontend & UI/UX |
-| Ashrith Puppala | Backend, Database & Integration |
-| Janhvi Agrawal | AI Persona Generation & Multi-Agent Engine |
-| Chinmay J Rao | Simulation Orchestration & Analytics |
+| Member | Responsibility | Contact |
+|---|---|---|
+| Mahalakshmi B | Frontend & UI/UX | mahaa.92211@gmail.com |
+| Ashrith Puppala | Backend, Database & Integration | Ashrithpuppala07@gmail.com
+| Janhvi Agrawal | AI Persona Generation & Multi-Agent Engine | janhvi.agr@gmail.com |
+| Chinmay J Rao | Simulation Orchestration & Analytics | chinmay15052007@gmail.com |
 
 ---
 
